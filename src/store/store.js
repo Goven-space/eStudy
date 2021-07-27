@@ -15,19 +15,19 @@ export default new Vuex.Store({
         student,
         teacher
     },
-    plugins:[
-        //自动登陆插件
-        createPersistedState({
-            key:'eStudy',
-            paths:['user'],
-            //订阅函数
-            subscriber(store){
-                store.dispatch('user/checkedLogin')
-                return function(handle){
-                    return  store.subscribe(handle)
-                }
-            }
-        })
-    ]
+    // plugins:[
+    //     //自动登陆插件
+    //     createPersistedState({
+    //         key:'eStudy',
+    //         paths:['user'],
+    //         //订阅函数
+    //         subscriber(store){
+    //             store.dispatch('user/checkedLogin')
+    //             return function(handle){
+    //                 return  store.subscribe(handle)
+    //             }
+    //         }
+    //     })
+    // ]
 
 })

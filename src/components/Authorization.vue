@@ -5,11 +5,12 @@
         <ValidationProvider name="用户名" rules="required" v-slot="{errors}">
           <div class="filed">
             <!-- 用户名输入框 -->
-            <a-input 
+            <a-input
               type="text"
-              :class="{error:errors[0]}" 
-              placeholder="请输入用户名"  
-              v-model="form.name">
+              :class="{error:errors[0]}"
+              placeholder="请输入用户名"
+              v-model="form.name"
+            >
               <a-icon type="user" slot="prefix" class="icon"></a-icon>
             </a-input>
             <!-- 用户名错误信息 -->
@@ -19,11 +20,12 @@
         <ValidationProvider name="密码" rules="required" v-slot="{errors}">
           <div class="filed">
             <!-- 密码输入框 -->
-            <a-input 
+            <a-input
               type="password"
               :class="{error:errors[0]}"
-              placeholder="请输入密码" 
-              v-model="form.password" >
+              placeholder="请输入密码"
+              v-model="form.password"
+            >
               <a-icon type="lock" slot="prefix" class="icon"></a-icon>
             </a-input>
             <!-- 密码错误信息 -->
@@ -36,35 +38,30 @@
         </div>
       </form>
     </ValidationObserver>
-    
   </div>
 </template>
 
 <script>
 //引入axios编辑的api
-import  {api} from "../utils/api"
+import { api } from "../utils/api";
 
 export default {
   data() {
     return {
       form: {
         name: "",
-        password: "",
+        password: ""
       }
     };
   },
-  computed:{
-    
-  },
+  computed: {},
   methods: {
     //提交表单，想后台提出请求
     submit() {
       this.$store.dispatch('user/login',this.form)
-      }
-      
-    }
+      }  
   }
-
+};
 </script>
 
 <style lang="scss" scoped>
@@ -84,10 +81,10 @@ form {
 .icon {
   color: rgba(0, 0, 0, 0.25);
 }
-.error{
-  border:1px solid red;
+.error {
+  border: 1px solid red;
 }
-.error-tip{
-  color:red;
+.error-tip {
+  color: red;
 }
 </style>

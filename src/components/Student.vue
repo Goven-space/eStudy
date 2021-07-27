@@ -56,7 +56,7 @@ const work_status = {
     '1' : '需完善',
     '2' : '已完成'
 }
-const baseHost = "http://sandbox_api.estudy.chanke.xyz"
+const baseHost = "http://localhost:3000"
 
 export default {
     computed:{

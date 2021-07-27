@@ -29,7 +29,10 @@ const actions = {
     login({commit},form){
         api.post('/auth/login',form).then(result => {
             commit('login',result)
+            console.log(result)
         })
+
+    
     },
     checkedLogin({commit,state,dispatch}){
         api.defaults.headers.common["Token"] = state.info.token
